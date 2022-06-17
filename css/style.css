@@ -1,3 +1,49 @@
+.tarjeta {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 1fr);
+  grid-template-rows: 1fr 250px;
+  height: 500px;
+  width: 600px;
+  grid-template-areas: "descripcion descripcion";
+}
+.tarjeta .descripcion {
+  background-color: white;
+  grid-column-start: descripcion;
+  grid-column-end: descripcion;
+}
 
+.costo {
+  background-color: hsl(179deg, 62%, 43%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+.costo h5 {
+  font-size: 20px;
+}
+.costo h5, .costo p {
+  margin: 10px;
+}
+.costo :nth-child(2) > span {
+  font-weight: 300;
+  font-size: 30px;
+}
+.costo button {
+  background-color: hsl(71deg, 73%, 54%);
+  border-color: transparent;
+  border-radius: 10px;
+  height: 40px;
+  width: 200px;
+  margin: 10px auto 0 auto;
+  color: white;
+}
+
+.acercaDeNosotros {
+  background-color: hsl(178deg, 73%, 44%);
+  color: white;
+  text-align: left;
+  padding: 30px;
+}
 
 /*# sourceMappingURL=style.css.map */

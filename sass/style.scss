@@ -1,0 +1,63 @@
+$Cyan: hsl(179, 62%, 43%);
+$Bright-Yellow: hsl(71, 73%, 54%);
+$Cyan-light:hsl(178,73,44);
+$Light-Gray: hsl(204, 43%, 93%);
+$Grayish-Blue: hsl(218, 22%, 67%);
+
+
+@mixin estiloTarjetas($colorTexto, $colorFondo) {
+    background-color: $colorFondo;
+    color: $colorTexto;
+}
+
+.tarjeta{
+    display: grid;
+    grid-template-columns: 1fr minmax(300px,1fr);
+    grid-template-rows: 1fr 250px;
+    height: 500px;
+    width: 600px;
+
+    grid-template-areas: "descripcion descripcion";
+
+    .descripcion{
+        background-color: white;
+        grid-column-start: descripcion;
+        grid-column-end: descripcion;
+    }
+}
+
+.costo{
+ @include estiloTarjetas(white, $Cyan);
+ display: flex;
+ flex-direction: column;
+padding: 30px;
+
+h5{
+    font-size: 20px;
+}
+
+h5,p{
+    margin: 10px;
+}
+
+:nth-child(2)>span{
+    font-weight: 300;
+    font-size: 30px;
+}
+    button{
+        background-color: $Bright-Yellow;
+        border-color: transparent;
+        border-radius: 10px;
+        height: 40px;
+        width: 200px;
+        margin: 10px auto 0 auto;
+        color: white;
+    }
+}
+
+.acercaDeNosotros{
+ @include estiloTarjetas(white, $Cyan-light);
+    text-align: left;
+   padding: 30px;;
+   
+}
