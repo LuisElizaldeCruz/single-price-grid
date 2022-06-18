@@ -1,8 +1,9 @@
 $Cyan: hsl(179, 62%, 43%);
 $Bright-Yellow: hsl(71, 73%, 54%);
-$Cyan-light:hsl(178,73,44);
+$Cyan-light: hsl(178, 73%, 44%);
 $Light-Gray: hsl(204, 43%, 93%);
 $Grayish-Blue: hsl(218, 22%, 67%);
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
 
 
 @mixin estiloTarjetas($colorTexto, $colorFondo) {
@@ -10,41 +11,66 @@ $Grayish-Blue: hsl(218, 22%, 67%);
     color: $colorTexto;
 }
 
-.tarjeta{
+body{
+    font-family: 'Karla', sans-serif;
+    background-color: $Light-Gray;
+}
+
+.tarjeta {
     display: grid;
-    grid-template-columns: 1fr minmax(300px,1fr);
-    grid-template-rows: 1fr 250px;
+    grid-template-columns: 1fr minmax(300px, 1fr);
+    grid-template-rows: 250px 250px;
     height: 500px;
     width: 600px;
 
     grid-template-areas: "descripcion descripcion";
+}
 
-    .descripcion{
-        background-color: white;
-        grid-column-start: descripcion;
-        grid-column-end: descripcion;
+.descripcion {
+    background-color: white;
+    grid-column-start: descripcion;
+    grid-column-end: descripcion;
+    padding: 30px;;
+    &>h3{
+        color: $Cyan;
+        font-size: 25px;
+    }   
+}
+
+.beneficios{
+    color: $Grayish-Blue;
+}
+
+.oferta{
+    color: $Bright-Yellow;
+}
+
+.costo {
+    @include estiloTarjetas(white, $Cyan);
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+
+    h5 {
+        font-size: 15px;
     }
-}
 
-.costo{
- @include estiloTarjetas(white, $Cyan);
- display: flex;
- flex-direction: column;
-padding: 30px;
+    h5,p {
+        margin: 5px;
+    }
 
-h5{
-    font-size: 20px;
-}
+    
 
-h5,p{
-    margin: 10px;
-}
+    :nth-child(2)>span {
+        font-weight: 300;
+        font-size: 30px;
+    }
 
-:nth-child(2)>span{
-    font-weight: 300;
-    font-size: 30px;
-}
-    button{
+    :nth-last-child(2){
+        font-size: 15px;
+    }
+
+    button {
         background-color: $Bright-Yellow;
         border-color: transparent;
         border-radius: 10px;
@@ -55,9 +81,16 @@ h5,p{
     }
 }
 
-.acercaDeNosotros{
- @include estiloTarjetas(white, $Cyan-light);
+.mensualidad{
+    font-weight: lighter;
+}
+
+.acercaDeNosotros {
+    @include estiloTarjetas(white, $Cyan-light);
     text-align: left;
-   padding: 30px;;
-   
+    padding: 30px;
+
+    &>h4{
+        margin-top: 0;
+    }
 }

@@ -1,15 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+body {
+  font-family: "Karla", sans-serif;
+  background-color: hsl(204deg, 43%, 93%);
+}
+
 .tarjeta {
   display: grid;
   grid-template-columns: 1fr minmax(300px, 1fr);
-  grid-template-rows: 1fr 250px;
+  grid-template-rows: 250px 250px;
   height: 500px;
   width: 600px;
   grid-template-areas: "descripcion descripcion";
 }
-.tarjeta .descripcion {
+
+.descripcion {
   background-color: white;
   grid-column-start: descripcion;
   grid-column-end: descripcion;
+  padding: 30px;
+}
+.descripcion > h3 {
+  color: hsl(179deg, 62%, 43%);
+  font-size: 25px;
+}
+
+.beneficios {
+  color: hsl(218deg, 22%, 67%);
+}
+
+.oferta {
+  color: hsl(71deg, 73%, 54%);
 }
 
 .costo {
@@ -20,14 +40,17 @@
   padding: 30px;
 }
 .costo h5 {
-  font-size: 20px;
+  font-size: 15px;
 }
 .costo h5, .costo p {
-  margin: 10px;
+  margin: 5px;
 }
 .costo :nth-child(2) > span {
   font-weight: 300;
   font-size: 30px;
+}
+.costo :nth-last-child(2) {
+  font-size: 15px;
 }
 .costo button {
   background-color: hsl(71deg, 73%, 54%);
@@ -39,11 +62,18 @@
   color: white;
 }
 
+.mensualidad {
+  font-weight: lighter;
+}
+
 .acercaDeNosotros {
   background-color: hsl(178deg, 73%, 44%);
   color: white;
   text-align: left;
   padding: 30px;
+}
+.acercaDeNosotros > h4 {
+  margin-top: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
