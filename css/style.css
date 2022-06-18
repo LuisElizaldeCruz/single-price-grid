@@ -10,6 +10,7 @@ body {
   grid-template-rows: 250px 250px;
   height: 500px;
   width: 600px;
+  margin: auto;
   grid-template-areas: "descripcion descripcion";
 }
 
@@ -74,6 +75,21 @@ body {
 }
 .acercaDeNosotros > h4 {
   margin-top: 0;
+}
+
+@media screen and (max-width: 560px) {
+  .tarjeta {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "descripcion" "costo" "acercaDeNostros";
+  }
+
+  .descripcion h3 {
+    margin-top: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
